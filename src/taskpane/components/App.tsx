@@ -5,7 +5,7 @@ import HeroList, { HeroListItem } from "./HeroList";
 import Progress from "./Progress";
 import logo from "../../../assets/logo-filled.png";
 
-/* global console, Excel  */
+/* global console, Office  */
 
 export interface AppProps {
   title: string;
@@ -44,25 +44,17 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   click = async () => {
-    try {
-      await Excel.run(async (context) => {
-        /**
-         * Insert your Excel code here
-         */
-        const range = context.workbook.getSelectedRange();
-
-        // Read the range address
-        range.load("address");
-
-        // Update the fill color
-        range.format.fill.color = "yellow";
-
-        await context.sync();
-        console.log(`The range address was ${range.address}.`);
-      });
-    } catch (error) {
-      console.error(error);
-    }
+    Office.context.document.setSelectedDataAsync(
+      "Hello World!",
+      {
+        coercionType: Office.CoercionType.Text,
+      },
+      (result) => {
+        if (result.status === Office.AsyncResultStatus.Failed) {
+          console.error(result.error.message);
+        }
+      }
+    );
   };
 
   render() {
