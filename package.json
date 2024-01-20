@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ExtraBB/Office-Addin-React-Vite-Template.git"
+    "url": "https://github.com/jijinbei/Office-Addin-React-Vite-Template.git"
   },
   "license": "MIT",
   "config": {
-    "app_to_debug": "excel",
+    "app_to_debug": "powerpoint",
     "app_type_to_debug": "desktop",
     "dev_server_port": 3000
   },
@@ -35,7 +35,7 @@
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
-    "@vitejs/plugin-react-swc": "^3.0.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.38.0",
     "eslint-plugin-office-addins": "^2.1.5",
     "eslint-plugin-react-hooks": "^4.6.0",
